@@ -1,3 +1,15 @@
+<?php
+    include_once '../php/db_connect.php';
+    include_once '../php/functions.php';
+
+    sec_session_start();
+
+    if (login_check($mysqli) == false) {
+        header('Location: ../index.php');
+        exit();
+    }
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +22,6 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-
 <body>
     <div id="main">
         <div id="common">

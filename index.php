@@ -1,14 +1,14 @@
 <?php
-include_once 'php/db_connect.php';
-include_once 'php/functions.php';
- 
-sec_session_start();
- 
-if (login_check($mysqli) == true) {
-    $logged = 'in';
-} else {
-    $logged = 'out';
-}
+    include_once 'php/db_connect.php';
+    include_once 'php/functions.php';
+     
+    sec_session_start();
+     
+    if (login_check($mysqli)) {
+        $logged = 'in';
+    } else {
+        $logged = 'out';
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,11 +20,12 @@ if (login_check($mysqli) == true) {
     </head>
     <body>
         <?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
-        }
-        ?> 
-        <form action="php/process_login.php" method="post" name="login_form">                      
+            if (isset($_GET['error'])) {
+                echo '<p class="error">Error Logging In!</p>';
+            }
+        ?>
+
+        <form action="process_login.php" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
             Password: <input type="password" 
                              name="password" 
@@ -34,14 +35,16 @@ if (login_check($mysqli) == true) {
                    onclick="formhash(this.form, this.form.password);" /> 
         </form>
  
-<?php
-        if (login_check($mysqli) == true) {
-            echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
-            echo '<p>Do you want to change user? <a href="php/logout.php">Log out</a>.</p>';
-        } else {
-            echo '<p>Currently logged ' . $logged . '.</p>';
-            echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
-        }
-?>      
+        <?php
+            if (login_check($mysqli)) {
+                echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
+                echo '<p>Do you want to change user? <a href="logout.php">Log out</a>.</p>';
+                echo '<p>Articles <a href="pages/articles.php">here</a>.</p>';
+            } else {
+                echo '<p>Currently logged ' . $logged . '.</p>';
+                echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
+                echo '<p>Articles <a href="pages/articles.php">here</a>.</p>';
+            }
+        ?>      
     </body>
 </html>
