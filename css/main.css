@@ -1,0 +1,161 @@
+body {
+  background-color: #EBE8E4;
+  color: #222;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+#main {
+	display: block;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+#common {
+	float: left;
+	width: 25%;
+	position: fixed;
+	margin: 8px auto;
+	max-width: 300px;
+}
+
+#logo > img {
+	display: block;
+	padding: 5px 0 10px 0;
+}
+
+article, nav {
+	background-color: #fff;
+	color: #888;
+	display: block;
+  	border-radius: 6px;
+  	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+  	box-sizing: border-box;
+  		-moz-box-sizing: border-box;
+}
+
+/*nav {
+	
+}*/
+
+article {
+	float: right;
+	width: 70%;
+	margin: 8px 0 8px 0;
+	max-width: 1000px;
+  	min-width: 220px;
+}
+
+	article > header, article p, article h2, article li {
+		line-height: 1.5em;
+	    padding: 0 24px;
+	    text-decoration: none;
+	}
+
+		article > header > h1 {
+		 	text-align: right;
+		 	padding: 24px 10px 10px 0px;
+		 	color: #888;
+		}
+
+		article ul {
+			list-style-type: none;
+			text-align: right;
+		}
+
+		article ul li {
+			margin-bottom: 10px;
+		}
+
+	article p {
+		text-align: justify;
+	}
+
+	article footer {
+		margin: 5px auto;
+		padding: 24px;
+	}
+		article footer > cite {
+			float: right;
+		}
+
+		article footer > span {
+			float: left;
+		}
+
+.article_img {
+	float: left;
+	margin: 0 1em 0 24px;
+	text-align: center;
+}
+
+nav {
+  border: 1px solid #dedede;
+  overflow: hidden;
+}
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+    nav ul li {
+      display: inline-block;
+      list-style-type: none;
+      width: 100%;
+      
+      -webkit-transition: all 0.2s;
+      	-moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s; 
+    }
+
+    nav ul li.selected a {
+    	background-color: rgb(83,117,155);
+    	color: white;
+    }
+
+      nav > ul > li > a {
+        color: #aaa;
+        display: block;
+        font-size: 1.2em;
+        line-height: 60px;
+        padding: 0 24px;
+        text-decoration: none;
+      }
+
+        nav > ul > li:hover {
+          background-color: rgb(40, 44, 47);
+        }
+
+        nav > ul > li:hover > a {
+          color: rgb(255, 255, 255);
+        }
+        
+iframe.youtube {
+	border: none;
+	display:block;
+	padding: 22px;
+	width: 400px;
+    height: 300px;
+    max-width: 640px;
+    max-height: 480px;
+    margin: 0 auto;
+}
+
+@media print
+{
+	iframe.youtube, article footer, #common  {
+		display: none;
+	}
+
+	article {
+		width: auto;
+	}
+
+	body {
+		font-size: 12px;
+	}
+}
