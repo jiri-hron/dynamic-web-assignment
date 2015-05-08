@@ -42,7 +42,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         }
                 $stmt->close();
     } else {
-        $error_msg .= '<p class="error">Database error Line 39</p>';
+        $error_msg .= '<p class="error">Database error Line 45</p>';
                 $stmt->close();
     }
  
@@ -85,9 +85,11 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
+                exit();
             }
         }
-        header('Location: ./register_success.php');
+        header('Location: ../register_success.php');
+        exit();
     }
 }
 

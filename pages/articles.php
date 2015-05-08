@@ -25,7 +25,7 @@
 <body>
     <div id="main">
         <div id="common">
-            <div id="logo">
+            <div class="logo">
                 <img src="../img/tg_logo.png" alt="Top Gear">
             </div>
             <nav>

@@ -1,15 +1,16 @@
 body {
-  background-color: #EBE8E4;
-  color: #222;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size: 1em;
+	  background-color: #EBE8E4;
+	  color: #222;
+	  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	  font-weight: 300;
+	  font-size: 1em;
 }
 
 #main {
 	display: block;
 	max-width: 1024px;
 	margin: 0 auto;
+	position: relative;
 }
 
 #common {
@@ -20,10 +21,76 @@ body {
 	max-width: 300px;
 }
 
-#logo > img {
+.logo > img {
 	display: block;
 	padding: 5px 0 10px 0;
 }
+
+.aut_form {
+	display: block;
+	max-width: 400px;
+    margin: 4em auto;
+	padding: 10px;
+	background-color: rgb(40, 44, 47);
+	color: rgb(255, 255, 255);
+	border-radius: 6px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+  	box-sizing: border-box;
+  		-moz-box-sizing: border-box;
+  		-webkit-box-sizing: border-box;
+  		-ms-box-sizing:content-box;
+}
+
+	.aut_form .logo {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+
+	.aut_form .form_description {
+		margin: .5em;
+		padding: 0 .5em;
+	}
+
+	.aut_form form {
+		background-color: #fff;
+		color: #888;
+		min-height: 120px;
+		padding: 1em;
+		margin: 1em;
+		border-radius: 6px;
+		box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	  	box-sizing: border-box;
+  			-moz-box-sizing: border-box;
+  			-webkit-box-sizing: border-box;
+  			-ms-box-sizing:content-box;
+	}
+
+	.aut_form label {
+		width: 35%;
+	}
+
+	.aut_form input[type=text], .aut_form input[type=password] {
+		width: auto;
+	}
+
+	.aut_form h1 {
+		font-size: 1.35em;
+	}
+
+	.aut_form input[type=button] {
+		float: right;
+		margin: .5em 0;
+		width: 7em;
+		height: 3em;
+	}
+
+	.aut_form table {
+		table-layout: fixed;
+	}
+
+	.aut_form table td {
+		height: 2.2em;
+	}
 
 article, nav {
 	background-color: #fff;
@@ -33,6 +100,8 @@ article, nav {
   	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
   	box-sizing: border-box;
   		-moz-box-sizing: border-box;
+  		-webkit-box-sizing: border-box;
+  		-ms-box-sizing:content-box;
 }
 
 /*nav {

@@ -8,9 +8,14 @@ if (! $error) {
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Secure Login: Error</title>
-        <link rel="stylesheet" href="styles/main.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Log-In page</title>
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+        <script type="text/JavaScript" src="js/sha512.js"></script>
+        <script type="text/JavaScript" src="js/forms.js"></script>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
     <body>
         <h1>There was a problem</h1>
