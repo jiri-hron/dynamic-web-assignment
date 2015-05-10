@@ -1,6 +1,6 @@
 <?php
-include_once 'php/register.inc.php';
-include_once 'php/functions.php';
+include_once '../php/restricted/register.inc.php';
+include_once '../php/restricted/functions.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,8 +8,8 @@ include_once 'php/functions.php';
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Registration</title>
     <link rel="stylesheet" href="../css/main.css" type="text/css">
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="../js/sha512.js"></script>
+    <script type="text/JavaScript" src="../js/forms.js"></script>
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -21,8 +21,8 @@ include_once 'php/functions.php';
         <div class="aut_form">
             <div class="form_description">
                 <div class="logo">
-                    <img src="img/tg_logo.png" alt="Top Gear"></div>
-
+                    <img src="../img/tg_logo.png" alt="Top Gear">
+                </div>
                 <h1>Registration</h1>
                 <?php
                 if (!empty($error_msg)) {
@@ -49,6 +49,8 @@ include_once 'php/functions.php';
             <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>"  method="post" 
                 name="registration_form">
                 <table>
+                    <col class="column-one">
+                    <col class="column-two">
                     <tr>
                         <td>
                             <label for="username">Username:</label>
@@ -78,7 +80,7 @@ include_once 'php/functions.php';
                             <label for="confirmpwd">Confirm password:</label>
                         </td>
                         <td>
-                            <input type="password" name="confirmpwd" id="confirmpwd" />
+                            <input type="password" name="confirmpwd" id="confirmpwd" size="50" />
                         </td>
                     </tr>
                 </table>
@@ -88,7 +90,7 @@ include_once 'php/functions.php';
                                        this.form.email,
                                        this.form.password,
                                        this.form.confirmpwd);" />
-                <p>Return to the <a href="index.php">Log-In page</a>.</p>
+                <p>Return to the <a href="login.php">Log-In page</a>.</p>
             </form>
         </div>
     </div>

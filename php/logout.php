@@ -1,6 +1,6 @@
 <?php
 
-include_once 'php/functions.php';
+include_once 'restricted/functions.php';
 sec_session_start();
  
 // Unset all session values 
@@ -19,7 +19,14 @@ setcookie(session_name(),
  
 // Destroy session 
 session_destroy();
-header('Location: ../index.php');
-exit();
+
+if (isset($_GET['back'])) {
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	exit();
+}
+else {
+	header('Location: ../pages/login.php');
+	exit();
+}
 
 ?>

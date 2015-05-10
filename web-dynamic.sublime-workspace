@@ -734,7 +734,7 @@
 		"xdebug":
 		{
 			"hide_conflict": false,
-			"url": "https://localhost/index.php",
+			"url": "https://localhost/pages/login.php",
 			"restore_index":
 			{
 				"101":

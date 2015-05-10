@@ -1,3 +1,10 @@
+<?php
+    include_once '../php/restricted/db_connect.php';
+    include_once '../php/restricted/functions.php';
+     
+    sec_session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,28 +27,49 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="../index.html">Top Gear Show</a>
+                        <a href="../index.php">Top Gear Show</a>
                     </li>
                     <li>
-                        <a href="clarkson.html">Jeremy Clarkson</a>
+                        <a href="clarkson.php">Jeremy Clarkson</a>
                     </li>
                     <li>
-                        <a href="may.html">James May</a>
+                        <a href="may.php">James May</a>
                     </li>
                     <li>
-                        <a href="hammond.html">Richard Hammond</a>
+                        <a href="hammond.php">Richard Hammond</a>
                     </li>
                     <li class="selected">
-                        <a href="stig.html">The Stig</a>
+                        <a href="stig.php">The Stig</a>
                     </li>
                     <li>
                         <a href="articles.php">Articles</a>
+                    </li>
+                    <li>
+                        <a href="editor.php">Write article ...</a>
                     </li>
                 </ul>
             </nav>
         </div>
         <article>
             <header>
+                <?php 
+                    if (login_check($mysqli)) {
+                       echo "
+                            <span>You are currently logged-in as <b>" . 
+                            $_SESSION['username'] .  
+                            "</b>. 
+                            <a href=\"../php/logout.php?back=1\">
+                                Log out
+                            </a>.
+                            </span>"; 
+                    }
+                    else {                        
+                        echo "<span>You are currently not
+                                <a href=\"login.php?write=0\">
+                                    logged-in</a>.
+                            </span>";
+                    }
+                ?>
                 <h1>The Stig</h1>
             </header>
             <!-- /header -->

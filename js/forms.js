@@ -77,3 +77,21 @@ function regformhash(form, uid, email, password, conf) {
     form.submit();
     return true;
 }
+
+function requireNonEmpty () {
+    var heading = document.forms["edit_form"]["heading"].value;
+    var text = document.forms["edit_form"]["comment"].value;
+
+    ret = heading == '' || text == '';
+
+    if (ret) {
+        alert('Both heading and text must be non-empty!');
+    }
+
+    if (heading.length > 128) {
+        alert('Heading cannot be longer than 128 characters!');
+        ret = true;
+    }
+
+    return !ret;
+}

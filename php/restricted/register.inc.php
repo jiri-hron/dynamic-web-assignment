@@ -11,7 +11,8 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Not a valid email
-        $error_msg .= '<p class="error">The email address you entered is not valid</p>';
+        $error_msg .= '<p class="error">
+            The email address you entered is not valid</p>';
     }
  
     $password = filter_input(INPUT_POST, 'p', FILTER_SANITIZE_STRING);
@@ -62,7 +63,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
                 }
                 $stmt->close();
         } else {
-                $error_msg .= '<p class="error">Database error line 55</p>';
+                $error_msg .= '<p class="error">Database error line 65</p>';
                 $stmt->close();
         }
  
@@ -84,11 +85,11 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
             $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
-                header('Location: ../error.php?err=Registration failure: INSERT');
+                header('Location: ../../pages/error.php?err=Registration failure: INSERT');
                 exit();
             }
         }
-        header('Location: ../register_success.php');
+        header('Location: ../../pages/login.php?success=1');
         exit();
     }
 }

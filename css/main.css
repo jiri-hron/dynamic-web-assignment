@@ -3,7 +3,7 @@ body {
 	  color: #222;
 	  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	  font-weight: 300;
-	  font-size: 1em;
+	  font-size: 15px;
 }
 
 #main {
@@ -21,6 +21,46 @@ body {
 	max-width: 300px;
 }
 
+#editor {
+	width: 100%;
+  	max-width: 750px;
+  	overflow: hidden;
+	box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-ms-box-sizing:content-box;
+ }
+
+	#editor textarea {
+		font-size: 15px;
+		padding: 15px;
+		width: 95%;
+	}
+
+	#editor #heading {
+		float: right;
+		padding: 5px;
+		width: 100%;
+	}
+
+	#editor .column-one {
+		width: 15%;
+	}
+
+	#editor .column-two {
+		width: 85%;
+	}
+
+	#editor input[type=submit] {
+		margin-right: 60px;
+   		margin-top: 35px;
+   		width: 150px;
+   		height: 45px;
+   		font-size: 16.5px;
+   		border-radius: 6px;
+		box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	}
+
 .logo > img {
 	display: block;
 	padding: 5px 0 10px 0;
@@ -28,13 +68,14 @@ body {
 
 .aut_form {
 	display: block;
-	max-width: 400px;
-    margin: 4em auto;
+	max-width: 500px;
+    margin: 60px auto;
 	padding: 10px;
 	background-color: rgb(40, 44, 47);
-	color: rgb(255, 255, 255);
+	color: white;
 	border-radius: 6px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	overflow: hidden;
   	box-sizing: border-box;
   		-moz-box-sizing: border-box;
   		-webkit-box-sizing: border-box;
@@ -47,16 +88,16 @@ body {
 	}
 
 	.aut_form .form_description {
-		margin: .5em;
-		padding: 0 .5em;
+		margin: 7.5px;
+		padding: 0 7.5px;
 	}
 
 	.aut_form form {
 		background-color: #fff;
 		color: #888;
 		min-height: 120px;
-		padding: 1em;
-		margin: 1em;
+		padding: 15px;
+		margin: 15px;
 		border-radius: 6px;
 		box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	  	box-sizing: border-box;
@@ -65,23 +106,34 @@ body {
   			-ms-box-sizing:content-box;
 	}
 
-	.aut_form label {
-		width: 35%;
-	}
+	.aut_form table {
+ 		margin: 0 auto;
+ 		table-layout: fixed;
+ 		width: 100%;
+ 	}
+
+ 	.column-one {
+ 		width: 35%;
+ 	}
+
+ 	.column-two {
+ 		width: 65%;
+ 	}
 
 	.aut_form input[type=text], .aut_form input[type=password] {
-		width: auto;
+		width: 95%;
 	}
 
 	.aut_form h1 {
-		font-size: 1.35em;
+		font-size: 20.25px;
+		text-align: center;
 	}
 
-	.aut_form input[type=button] {
+	.aut_form input[type=button], .aut_form input[type=submit] {
 		float: right;
-		margin: .5em 0;
-		width: 7em;
-		height: 3em;
+		margin: 7.5px 10px;
+		width: 105px;
+		height: 45px;
 	}
 
 	.aut_form table {
@@ -89,8 +141,16 @@ body {
 	}
 
 	.aut_form table td {
-		height: 2.2em;
+		height: 33px;
 	}
+
+.badges {
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	padding: 5px;
+	font-size: 14.25px;
+}
 
 article, nav {
 	background-color: #fff;
@@ -104,10 +164,6 @@ article, nav {
   		-ms-box-sizing:content-box;
 }
 
-/*nav {
-	
-}*/
-
 article {
 	float: right;
 	width: 70%;
@@ -117,14 +173,25 @@ article {
 }
 
 	article > header, article p, article h2, article li {
-		line-height: 1.5em;
+		line-height: 22.5px;
 	    padding: 0 24px;
 	    text-decoration: none;
 	}
 
+		article > header {
+			overflow: hidden;
+			padding: 10px;
+			margin-left: 10px;
+		}
+
+		article > header > span {
+			float: left;
+		}
+
 		article > header > h1 {
 		 	text-align: right;
 		 	padding: 24px 10px 10px 0px;
+		 	margin: 0;
 		 	color: #888;
 		}
 
@@ -155,9 +222,22 @@ article {
 
 .article_img {
 	float: left;
-	margin: 0 1em 0 24px;
+	margin: 15px 15px 15px 24px;
 	text-align: center;
 }
+
+.description {
+	background-color: rgb(40, 44, 47);
+	color: white;
+}
+
+	.description h1, .description a {
+		color: white;
+	}
+
+	.description a {
+		color: rgb(83,117,155);
+	}
 
 nav {
   border: 1px solid #dedede;
@@ -169,7 +249,7 @@ nav {
     padding: 0;
   }
 
-    nav ul li {
+    nav ul li, .item {
       display: inline-block;
       list-style-type: none;
       width: 100%;
@@ -180,28 +260,68 @@ nav {
         -o-transition: all 0.2s;
         transition: all 0.2s; 
     }
-
-    nav ul li.selected a {
-    	background-color: rgb(83,117,155);
-    	color: white;
-    }
-
-      nav > ul > li > a {
+      nav ul li a, .item {
         color: #aaa;
         display: block;
-        font-size: 1.2em;
+        font-size: 18px;
         line-height: 60px;
         padding: 0 24px;
         text-decoration: none;
       }
 
-        nav > ul > li:hover {
+        nav ul li:hover, .selected:hover a {
           background-color: rgb(40, 44, 47);
         }
 
-        nav > ul > li:hover > a {
-          color: rgb(255, 255, 255);
+        nav ul li:hover a, .selected:hover a {
+          color: white;
         }
+
+nav ul li.selected a, p.success, p.error, .badges {
+    background-color: rgb(83,117,155);
+    color: white;
+    border-radius: 6px;
+  	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+}
+
+p.error, p.success {
+    text-align: center;
+    padding: 15px;
+}
+
+p.error {
+	background-color: #AA3431;
+}
+
+p.whitespace {
+	white-space: pre-wrap;
+}
+
+.rate_dialog {
+	width: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+	.rate_dialog input[type=submit] {
+		width: 105px;
+		height: 45px;
+		float: right;
+		margin-right: 60px;
+		margin-top: 5px;
+	}
+
+	.item, .item.selected, .rate_dialog input[type=submit] {
+		border-radius: 6px;
+		background-color: #EBE8E4;
+	  	box-shadow: 0 2px 2px -1px white;
+	  	color: rgb(40, 44, 47);
+	}
+
+	.item, .item.selected {
+		max-width: 300px;
+		margin: 4px auto;
+	}
         
 iframe.youtube {
 	border: none;
